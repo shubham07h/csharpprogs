@@ -1,52 +1,18 @@
-﻿
-using System;
+﻿using System;
 
-class Program
+namespace eucledian_distance
 {
-
-    public const int IS_PART_TIME = 1;
-
-    public const int IS_FULL_TIME = 2;
-
-    public const int EMP_RATE_PER_HOUR = 20;
-
-    public const int NUM_OF_WORKING_DAYS = 2;
-    static void Main(string[] args)
+    class Program
     {
-
-
-        int empHrs = 0, empWage = 0, totalEmpWage = 0;
-
-        for (int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+        static void Main(string[] args)
         {
-            Random random = new Random();
-
-            int empCheck = random.Next(0, 3);
-
-            switch (empCheck)
-            {
-                case IS_PART_TIME:
-                    empHrs = 4;
-                    break;
-                case IS_FULL_TIME:
-
-                    empHrs = 8;
-                    break;
-
-
-                default:
-
-                    empHrs = 0;
-                    break;
-            }
-            empWage = empHrs * EMP_RATE_PER_HOUR;
-
-            totalEmpWage += empWage;
-
-            Console.WriteLine("Emp Wage:" + empWage);
+            double x1, x2, y1, y2;
+            x1 = 3;
+            x2 = 4;
+            y1 = 5;
+            y2 = 2;
+            var distance = Math.Sqrt((Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)));
+            Console.WriteLine($"The Eucledian distance between the two points is: {Math.Round(distance, 4)}");
         }
-
-
-        Console.WriteLine("Total Emp Wage" + totalEmpWage);
     }
 }
